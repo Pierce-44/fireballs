@@ -3,11 +3,13 @@
 import { Canvas } from "@react-three/fiber";
 import Earth from "./components/earth";
 import Sun from "./components/sun";
+import { OrbitControls } from "@react-three/drei";
 
 export default function Home() {
   return (
     <div className="h-full w-full font-[family-name:var(--font-geist-sans)]">
       <Canvas frameloop="demand" camera={{ position: [0, 0, 5], fov: 50 }}>
+        <OrbitControls zoomSpeed={0.3} />
         <Sun />
         <Earth />
       </Canvas>

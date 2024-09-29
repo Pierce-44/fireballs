@@ -45,7 +45,7 @@ export default function useFireball({
   // otherwise it starts moving further off into space after each impact
   const initialOffsetPosition = impactPosition
     .clone()
-    .add(normalVector.multiplyScalar(1.1));
+    .add(normalVector.multiplyScalar(1.2));
 
   // Set the initial position of the fireball
   React.useEffect(() => {

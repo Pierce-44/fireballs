@@ -1,13 +1,16 @@
 import { useFrame } from "@react-three/fiber";
 import React from "react";
 import * as THREE from "three";
+import handleFireballColour from "../util/handleFireballColour";
 
 export default function FireballExplosion({
   position,
   onAnimationComplete,
+  impactEnergy,
 }: {
   position: THREE.Vector3;
   onAnimationComplete: () => void;
+  impactEnergy: number;
 }) {
   // starting values
   const [scale, setScale] = React.useState(0.1);
@@ -33,10 +36,16 @@ export default function FireballExplosion({
     }
   });
 
+  // TODO use a range from 0.1 - 0.3 or something depending on the energy
+
   return (
     <mesh ref={explosionRef} position={position} scale={scale}>
-      <sphereGeometry args={[0.2, 32, 32]} />
-      <meshBasicMaterial color="red" transparent opacity={opacity} />
+      <sphereGeometry args={[0.1, 32, 32]} />
+      <meshBasicMaterial
+        color={handleFireballColour(impactEnergy, 0, 2)}
+        transparent
+        opacity={opacity}
+      />
     </mesh>
   );
 }

@@ -1,8 +1,5 @@
-
 export default function Home() {
   return (
-    <div className="font-[family-name:var(--font-geist-sans)] h-full w-full">
-      
-    </div>
+    <div className="h-full w-full font-[family-name:var(--font-geist-sans)]"></div>
   );
 }

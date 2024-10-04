@@ -3,7 +3,6 @@
 import React from "react";
 import DataTable from "./dataTable";
 import { resetCameraPosition } from "../util/resetCameraPosition";
-import QuestionMarkSVG from "./svg/questionMarkSVG";
 import SideBarSVG from "./svg/sideBarSVG";
 import ZoomSVG from "./svg/zoomSVG";
 import ColourPalletSVG from "./svg/colourPalletSVG";

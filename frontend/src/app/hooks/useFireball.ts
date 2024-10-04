@@ -10,6 +10,8 @@ interface Props {
   lon: string;
   lonPosition: string;
   fireballVelocity: number;
+  velocityFactor: number;
+  startingDistance: number;
 }
 
 export default function useFireball({
@@ -18,6 +20,8 @@ export default function useFireball({
   lon,
   lonPosition,
   fireballVelocity,
+  velocityFactor,
+  startingDistance,
 }: Props) {
   const fireballRef = React.useRef<THREE.Mesh>(null);
   const positionRef = React.useRef(new THREE.Vector3());
@@ -45,7 +49,7 @@ export default function useFireball({
   // otherwise it starts moving further off into space after each impact
   const initialOffsetPosition = impactPosition
     .clone()
-    .add(normalVector.multiplyScalar(1.2));
+    .add(normalVector.multiplyScalar(startingDistance));
 
   // Set the initial position of the fireball
   React.useEffect(() => {
@@ -57,7 +61,7 @@ export default function useFireball({
   }, [impactX, impactY, impactZ]);
 
   const moveFireball = () => {
-    const speed = fireballVelocity / 5000;
+    const speed = fireballVelocity / velocityFactor;
 
     // Calculate direction vector from fireball to the impact point
     const direction = new THREE.Vector3()
@@ -71,10 +75,14 @@ export default function useFireball({
     fireballRef.current?.position.copy(positionRef.current);
   };
 
+  const [firstRender, setFirstRender] = React.useState(true);
+
   const resetFireBallPosition = () => {
     // Reset the position above Earth after impact
     fireballRef.current?.position.copy(initialOffsetPosition);
     positionRef.current.copy(initialOffsetPosition);
+
+    if (startingDistance === 0) return;
 
     // Trigger explosion
     setExplosionPosition(new THREE.Vector3(impactX, impactY, impactZ));
@@ -89,11 +97,13 @@ export default function useFireball({
       const earthRadius = 1;
 
       // Check if the fireball has fully entered the Earth
-      if (fireballDistanceFromCenter <= earthRadius + 0.001) {
+      if (fireballDistanceFromCenter <= earthRadius + 0.001 && !firstRender) {
         resetFireBallPosition();
       } else {
         moveFireball();
       }
+
+      setFirstRender(false);
     }
   });
 

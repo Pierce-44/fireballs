@@ -7,10 +7,16 @@ export default function FireballExplosion({
   position,
   onAnimationComplete,
   impactEnergy,
+  impactEnergyNormalized,
+  minColour,
+  maxColour,
 }: {
   position: THREE.Vector3;
   onAnimationComplete: () => void;
   impactEnergy: number;
+  impactEnergyNormalized: number;
+  minColour: number;
+  maxColour: number;
 }) {
   // starting values
   const [scale, setScale] = React.useState(0.1);
@@ -36,13 +42,11 @@ export default function FireballExplosion({
     }
   });
 
-  // TODO use a range from 0.1 - 0.3 or something depending on the energy
-
   return (
     <mesh ref={explosionRef} position={position} scale={scale}>
-      <sphereGeometry args={[0.1, 32, 32]} />
+      <sphereGeometry args={[0.06 * impactEnergyNormalized, 32, 32]} />
       <meshBasicMaterial
-        color={handleFireballColour(impactEnergy, 0, 2)}
+        color={handleFireballColour(impactEnergy, minColour, maxColour)}
         transparent
         opacity={opacity}
       />

@@ -15,7 +15,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Fireballs",
+  title: "Fireballs - 3D Visual",
   description: "Nasa Fireballs 3D Heatmap",
 };
 

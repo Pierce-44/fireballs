@@ -1,16 +1,33 @@
 export default function handleFireballColour(
   value: number,
-  min: number,
-  max: number,
+  minValue: number,
+  maxValue: number,
 ) {
-  // Normalize the value between 0 and 1
-  const normalized = (value - min) / (max - min);
+  function getColorForValue(value: number) {
+    // Ensure the value is between the specified range
+    value = Math.max(minValue, Math.min(value, maxValue));
 
-  // Red stays at 255 (#FF), blue stays at 0 (#00), and green decreases from 255 to 0
-  const r = 255; // Red is always at 255 (maximum)
-  const g = Math.round(255 * (1 - normalized)); // Green decreases from 255 (yellow) to 0 (red)
-  const b = 0; // Blue is always 0 (no blue component)
+    // Define the RGB values for yellow, orange, and red
+    const yellow = [255, 255, 0]; // Yellow (for minValue)
+    const orange = [255, 165, 0]; // Orange (for midValue)
+    const red = [255, 0, 0]; // Red (for maxValue)
 
-  // Convert to hex format and return the color
-  return `rgb(${r}, ${g}, ${b})`;
+    let color = [];
+    const midValue = (minValue + maxValue) / 2; // Calculate the middle point of the range
+
+    if (value <= midValue) {
+      // Interpolate between yellow and orange
+      const ratio = (value - minValue) / (midValue - minValue); // Normalize value between 0 and 1 for lower half
+      color = yellow.map((c, i) => Math.round(c + ratio * (orange[i] - c)));
+    } else {
+      // Interpolate between orange and red
+      const ratio = (value - midValue) / (maxValue - midValue); // Normalize value between 0 and 1 for upper half
+      color = orange.map((c, i) => Math.round(c + ratio * (red[i] - c)));
+    }
+
+    // Convert RGB array to hex color code
+    return `#${color.map((c) => c.toString(16).padStart(2, "0")).join("")}`;
+  }
+
+  return getColorForValue(value);
 }

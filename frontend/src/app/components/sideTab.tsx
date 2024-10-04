@@ -3,6 +3,13 @@
 import React from "react";
 import DataTable from "./dataTable";
 import { resetCameraPosition } from "../util/resetCameraPosition";
+import QuestionMarkSVG from "./svg/questionMarkSVG";
+import SideBarSVG from "./svg/sideBarSVG";
+import ZoomSVG from "./svg/zoomSVG";
+import ColourPalletSVG from "./svg/colourPalletSVG";
+import VelocitySVG from "./svg/velocitySVG";
+import LocationSVG from "./svg/lcoationSVG";
+import QuestionMarkPopUp from "./questionMarkPop";
 
 interface Props {
   fireballs: string[][];
@@ -66,22 +73,7 @@ export default function SideTab({
           onClick={() => setHideTab((prev) => !prev)}
           className="mr-2 h-10 rounded-lg px-2 hover:bg-[#363636]"
         >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 fill-gray-400"
-          >
-            <path
-              className="fill-gray-400"
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M8.85719 3H15.1428C16.2266 2.99999 17.1007 2.99998 17.8086 3.05782C18.5375 3.11737 19.1777 3.24318 19.77 3.54497C20.7108 4.02433 21.4757 4.78924 21.955 5.73005C22.2568 6.32234 22.3826 6.96253 22.4422 7.69138C22.5 8.39925 22.5 9.27339 22.5 10.3572V13.6428C22.5 14.7266 22.5 15.6008 22.4422 16.3086C22.3826 17.0375 22.2568 17.6777 21.955 18.27C21.4757 19.2108 20.7108 19.9757 19.77 20.455C19.1777 20.7568 18.5375 20.8826 17.8086 20.9422C17.1008 21 16.2266 21 15.1428 21H8.85717C7.77339 21 6.89925 21 6.19138 20.9422C5.46253 20.8826 4.82234 20.7568 4.23005 20.455C3.28924 19.9757 2.52433 19.2108 2.04497 18.27C1.74318 17.6777 1.61737 17.0375 1.55782 16.3086C1.49998 15.6007 1.49999 14.7266 1.5 13.6428V10.3572C1.49999 9.27341 1.49998 8.39926 1.55782 7.69138C1.61737 6.96253 1.74318 6.32234 2.04497 5.73005C2.52433 4.78924 3.28924 4.02433 4.23005 3.54497C4.82234 3.24318 5.46253 3.11737 6.19138 3.05782C6.89926 2.99998 7.77341 2.99999 8.85719 3ZM6.35424 5.05118C5.74907 5.10062 5.40138 5.19279 5.13803 5.32698C4.57354 5.6146 4.1146 6.07354 3.82698 6.63803C3.69279 6.90138 3.60062 7.24907 3.55118 7.85424C3.50078 8.47108 3.5 9.26339 3.5 10.4V13.6C3.5 14.7366 3.50078 15.5289 3.55118 16.1458C3.60062 16.7509 3.69279 17.0986 3.82698 17.362C4.1146 17.9265 4.57354 18.3854 5.13803 18.673C5.40138 18.8072 5.74907 18.8994 6.35424 18.9488C6.97108 18.9992 7.76339 19 8.9 19H9.5V5H8.9C7.76339 5 6.97108 5.00078 6.35424 5.05118ZM11.5 5V19H15.1C16.2366 19 17.0289 18.9992 17.6458 18.9488C18.2509 18.8994 18.5986 18.8072 18.862 18.673C19.4265 18.3854 19.8854 17.9265 20.173 17.362C20.3072 17.0986 20.3994 16.7509 20.4488 16.1458C20.4992 15.5289 20.5 14.7366 20.5 13.6V10.4C20.5 9.26339 20.4992 8.47108 20.4488 7.85424C20.3994 7.24907 20.3072 6.90138 20.173 6.63803C19.8854 6.07354 19.4265 5.6146 18.862 5.32698C18.5986 5.19279 18.2509 5.10062 17.6458 5.05118C17.0289 5.00078 16.2366 5 15.1 5H11.5ZM5 8.5C5 7.94772 5.44772 7.5 6 7.5H7C7.55229 7.5 8 7.94772 8 8.5C8 9.05229 7.55229 9.5 7 9.5H6C5.44772 9.5 5 9.05229 5 8.5ZM5 12C5 11.4477 5.44772 11 6 11H7C7.55229 11 8 11.4477 8 12C8 12.5523 7.55229 13 7 13H6C5.44772 13 5 12.5523 5 12Z"
-              fill="currentColor"
-            ></path>
-          </svg>
+          <SideBarSVG />
         </button>
         <h1 className="mx-auto whitespace-nowrap font-semibold text-gray-400">
           Fireballs 3D Visual
@@ -109,16 +101,10 @@ export default function SideTab({
                   ? "- All"
                   : " > " + energyFilterValue + " kt"}
               </p>
-
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="18px"
-                viewBox="0 -960 960 960"
-                width="18px"
-                fill="#e8eaed"
-              >
-                <path d="M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
-              </svg>
+              <QuestionMarkPopUp
+                title="Impact Energy"
+                infoText="The impact energy of a fireball, represents the total energy released when the fireball, which is typically a meteoroid or small asteroid, enters Earth's atmosphere and breaks apart or explodes. This energy is measured in terms of kilotons of TNT equivalent and gives an estimate of the destructive potential of the fireball. Higher impact energy means a more powerful event, similar to how explosions are rated in kilotons."
+              />
             </div>
             <input
               type="range"
@@ -134,27 +120,12 @@ export default function SideTab({
           <h2 className="whitespace-nowrap">
             <div className="mb-2 flex items-center justify-between gap-2 text-sm font-medium text-gray-300">
               <p className="flex items-center gap-2">
-                Normalised size{" "}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
-                  viewBox="0 -960 960 960"
-                  width="24px"
-                  fill="#e8eaed"
-                >
-                  <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Zm-40-60v-80h-80v-80h80v-80h80v80h80v80h-80v80h-80Z" />
-                </svg>
+                Normalised size <ZoomSVG />
               </p>
-
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="18px"
-                viewBox="0 -960 960 960"
-                width="18px"
-                fill="#e8eaed"
-              >
-                <path d="M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
-              </svg>
+              <QuestionMarkPopUp
+                title="Normalised Size"
+                infoText="The normalized size of a fireball refers to a scaled or adjusted value representing the relative size of the fireball event, allowing comparison between different fireballs. It's typically calculated based on factors like the fireball’s brightness, energy, or velocity, and normalizes these aspects to provide a standardized measure of its size across various fireball events. This makes it easier to compare the magnitude of different fireballs irrespective of their unique characteristics."
+              />
             </div>
             <input
               type="range"
@@ -172,27 +143,12 @@ export default function SideTab({
           <h2 className="whitespace-nowrap">
             <div className="mb-2 flex items-center justify-between gap-2 text-sm font-medium text-gray-300">
               <p className="flex items-center gap-2">
-                Colour Scale{" "}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
-                  viewBox="0 -960 960 960"
-                  width="24px"
-                  fill="#e8eaed"
-                >
-                  <path d="M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 32.5-156t88-127Q256-817 330-848.5T488-880q80 0 151 27.5t124.5 76q53.5 48.5 85 115T880-518q0 115-70 176.5T640-280h-74q-9 0-12.5 5t-3.5 11q0 12 15 34.5t15 51.5q0 50-27.5 74T480-80Zm0-400Zm-220 40q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm120-160q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm200 0q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm120 160q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17ZM480-160q9 0 14.5-5t5.5-13q0-14-15-33t-15-57q0-42 29-67t71-25h70q66 0 113-38.5T800-518q0-121-92.5-201.5T488-800q-136 0-232 93t-96 227q0 133 93.5 226.5T480-160Z" />
-                </svg>
+                Colour Scale <ColourPalletSVG />
               </p>
-
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="18px"
-                viewBox="0 -960 960 960"
-                width="18px"
-                fill="#e8eaed"
-              >
-                <path d="M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
-              </svg>
+              <QuestionMarkPopUp
+                title="Colour Scale"
+                infoText="An impact color scale that ranges from yellow to red represents the increasing intensity or severity of an event, like a fireball's impact. Yellow corresponds to lower intensity or smaller impacts, while orange marks a moderate level of intensity. As the scale progresses, red indicates the highest intensity or most significant impacts. The transition from yellow to red reflects growing energy or severity, allowing for a quick visual assessment of how powerful an event is, with red representing the most intense scenarios."
+              />
             </div>
             <input
               type="range"
@@ -208,27 +164,12 @@ export default function SideTab({
           <h2 className="whitespace-nowrap">
             <div className="mb-2 flex items-center justify-between gap-2 text-sm font-medium text-gray-300">
               <p className="flex items-center gap-2">
-                Velocity Factor{" "}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
-                  viewBox="0 -960 960 960"
-                  width="24px"
-                  fill="#e8eaed"
-                >
-                  <path d="M418-340q24 24 62 23.5t56-27.5l224-336-336 224q-27 18-28.5 55t22.5 61Zm62-460q59 0 113.5 16.5T696-734l-76 48q-33-17-68.5-25.5T480-720q-133 0-226.5 93.5T160-400q0 42 11.5 83t32.5 77h552q23-38 33.5-79t10.5-85q0-36-8.5-70T766-540l48-76q30 47 47.5 100T880-406q1 57-13 109t-41 99q-11 18-30 28t-40 10H204q-21 0-40-10t-30-28q-26-45-40-95.5T80-400q0-83 31.5-155.5t86-127Q252-737 325-768.5T480-800Zm7 313Z" />
-                </svg>
+                Velocity Factor <VelocitySVG />
               </p>
-
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="18px"
-                viewBox="0 -960 960 960"
-                width="18px"
-                fill="#e8eaed"
-              >
-                <path d="M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
-              </svg>
+              <QuestionMarkPopUp
+                title="Velocity Factor"
+                infoText="The fireball velocity factor refers to the speed at which a fireball travels as it enters Earth's atmosphere. This velocity plays a key role in determining the fireball's energy and potential impact. Faster fireballs tend to release more energy upon atmospheric entry, contributing to a more powerful explosion. The velocity factor helps in assessing the severity of the event and influences calculations related to the fireball's size, brightness, and overall impact."
+              />
             </div>
             <input
               type="range"
@@ -253,27 +194,13 @@ export default function SideTab({
           <h2 className="whitespace-nowrap">
             <div className="mb-2 flex items-center justify-between gap-2 text-sm font-medium text-gray-300">
               <p className="flex items-center gap-2">
-                Starting Distance{" "}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
-                  viewBox="0 -960 960 960"
-                  width="24px"
-                  fill="#e8eaed"
-                >
-                  <path d="M480-80q-106 0-173-33.5T240-200q0-24 14.5-44.5T295-280l63 59q-9 4-19.5 9T322-200q13 16 60 28t98 12q51 0 98.5-12t60.5-28q-7-8-18-13t-21-9l62-60q28 16 43 36.5t15 45.5q0 53-67 86.5T480-80Zm1-220q99-73 149-146.5T680-594q0-102-65-154t-135-52q-70 0-135 52t-65 154q0 67 49 139.5T481-300Zm-1 100Q339-304 269.5-402T200-594q0-71 25.5-124.5T291-808q40-36 90-54t99-18q49 0 99 18t90 54q40 36 65.5 89.5T760-594q0 94-69.5 192T480-200Zm0-320q33 0 56.5-23.5T560-600q0-33-23.5-56.5T480-680q-33 0-56.5 23.5T400-600q0 33 23.5 56.5T480-520Zm0-80Z" />
-                </svg>
+                Starting Distance <LocationSVG />
               </p>
 
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="18px"
-                viewBox="0 -960 960 960"
-                width="18px"
-                fill="#e8eaed"
-              >
-                <path d="M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
-              </svg>
+              <QuestionMarkPopUp
+                title="Starting Distance"
+                infoText="The starting distance scale adjusts how far the fireball begins from Earth. This scale allows you to control the initial position of the fireball in relation to Earth's surface, impacting the duration and path of its descent. By modifying the starting distance, you can simulate fireballs that originate from varying heights, providing a more dynamic and customizable visualization of fireball events."
+              />
             </div>
             <input
               type="range"
@@ -317,15 +244,7 @@ export default function SideTab({
           }}
         >
           <p>Reset Zoom Position</p>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="24px"
-            viewBox="0 -960 960 960"
-            width="24px"
-            fill="#e8eaed"
-          >
-            <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Zm-40-60v-80h-80v-80h80v-80h80v80h80v80h-80v80h-80Z" />
-          </svg>
+          <ZoomSVG />
         </button>
       </div>
     </div>

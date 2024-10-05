@@ -1,5 +1,6 @@
 const axios = require("axios");
 const { getRedisClient } = require("../middleware/initialiseRedisClient");
+require("dotenv").config();
 
 exports.getCachedData = async () => {
   // No need to listen for the 'ready' event here
@@ -19,10 +20,11 @@ exports.getCachedData = async () => {
       return JSON.parse(cachedData);
     }
 
+    const baseUrl = "https://ssd-api.jpl.nasa.gov/fireball.api";
+    const apiKey = process.env.NASA_API_KEY;
+
     // If no cached data, fetch it from the external API
-    const response = await axios.get(
-      "https://ssd-api.jpl.nasa.gov/fireball.api?www=1&vel-comp=true"
-    );
+    const response = await axios.get(`${baseUrl}&api_key=${apiKey}`);
     const data = response.data;
 
     // only store values with latitude, longitude and velocity values
@@ -36,7 +38,7 @@ exports.getCachedData = async () => {
     });
     console.log("Data fetched and cached in Redis");
 
-    return data;
+    return dataWithValues;
   } catch (error) {
     console.error("Error fetching data:", error);
     throw new Error("Failed to fetch data.");

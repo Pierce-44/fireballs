@@ -47,7 +47,7 @@ This application is a fireball simulation built with TypeScript, React, and Next
       ```sh
       sudo apt update
       sudo apt install redis-server
-
+      ```
 
 
 ## How to Install and Run the Project Locally:

@@ -42,7 +42,7 @@ https://github.com/user-attachments/assets/8dc95907-f557-4e3f-8118-4e9f3322ddca
    - Follow the installation [instructions](https://nodejs.org/en) for your platform.
 
 ### Redis
-1. Check if Node.js is installed:
+1. Check if Redis is installed:
     ```sh
      redis-server --version
     ```

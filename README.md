@@ -9,11 +9,11 @@ This application is a fireball simulation built with TypeScript, React, and Next
 <br/>
 
 ### Features
--Data Source: Utilizes the NASA API to fetch fireball data.
--3D Visualization: Implements React Three Fiber for immersive visualization of Earth and fireball impacts.
--Responsive Design: Tailored using Tailwind CSS for a seamless experience across devices.
--State Management: Employs TanStack Query for robust handling of asynchronous data fetching and caching.
--Caching Layer: Uses Redis on the backend to cache responses for improved performance and reduced API calls.
+- Data Source: Utilizes the NASA API to fetch fireball data.
+- 3D Visualization: Implements React Three Fiber for immersive visualization of Earth and fireball impacts.
+- Responsive Design: Tailored using Tailwind CSS for a seamless experience across devices.
+- State Management: Employs TanStack Query for robust handling of asynchronous data fetching and caching.
+- Caching Layer: Uses Redis on the backend to cache responses for improved performance and reduced API calls.
 
 <br/>
 

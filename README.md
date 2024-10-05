@@ -100,8 +100,8 @@ This application is a fireball simulation built with TypeScript, React, and Next
        ```
 
   4. Redis Setup (if not running already)
-
-Ensure the Redis server is up and running:
+     - Ensure the Redis server is up and running:
+       
      ```sh
      redis-server
      ```

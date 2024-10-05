@@ -26,6 +26,13 @@ This application is a fireball simulation built with TypeScript, React, and Next
    node -v
    ```
    If Node.js is installed, this command will return the version number. If not, proceed to install it.
+
+2. Install Node.js:
+   - Visit the Node.js official website and download the latest LTS version for your operating system.
+   - Follow the installation instructions for your platform.
+     ```sh
+   [node -v](https://nodejs.org/en)
+   ```
    
 ## How to Install and Run the Project Locally:
 #### - Please follow the following steps if you would like to install and run the porject locally

@@ -17,7 +17,7 @@ This application is a fireball simulation built with TypeScript, React, and Next
 
 <br/>
 
-## Prerequisites
+# Prerequisites
 ### - Before running the application, ensure you have the following installed on your computer:
 
 ### Node.js
@@ -58,7 +58,7 @@ This application is a fireball simulation built with TypeScript, React, and Next
      ```
 
 
-## Installation
+# Installation
 1. Clone the repository:
    
    ```sh

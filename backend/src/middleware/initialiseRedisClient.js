@@ -5,7 +5,7 @@ let redisClient;
 async function initializeRedisClient() {
   const redisURL = "redis://localhost:6379";
 
-  redisClient = createClient({ url: redisURL });
+  redisClient = createClient({ url: process.env.REDISCLOUD_URL });
 
   redisClient.on("error", (e) => {
     console.error("Failed to create the Redis client:", e);

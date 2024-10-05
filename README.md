@@ -17,7 +17,8 @@ This application is a fireball simulation built with TypeScript, React, and Next
 
 <br/>
 
-## Live App: [https://fireballs3d.vercel.app](https://fireballs3d.vercel.app/)
+### Live App: [https://fireballs3d.vercel.app](https://fireballs3d.vercel.app/)
+
 
 # Demo
 

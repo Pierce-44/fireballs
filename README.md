@@ -17,6 +17,11 @@ This application is a fireball simulation built with TypeScript, React, and Next
 
 <br/>
 
+# Demo
+
+https://github.com/user-attachments/assets/8dc95907-f557-4e3f-8118-4e9f3322ddca
+
+
 # Prerequisites
 ### - Before running the application, ensure you have the following installed on your computer:
 

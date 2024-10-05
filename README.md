@@ -1,13 +1,10 @@
 <div align="center">
   <img src="https://github.com/user-attachments/assets/9b285f78-0b6e-4e1c-8695-6584574cf833" height="100px"/>
-
-
-
 </div>
 
 # NASA Fireballs 3D Visual
 
-## Overview
+### Overview
 This application is a fireball simulation built with TypeScript, React, and Next.js. It utilizes Tailwind CSS for styling and TanStack Query for efficient asynchronous state management. The backend is powered by Node.js and leverages Redis for caching responses, providing a smooth user experience. The visualizations of the Earth and the impacting fireballs are created using React Three Fiber.
 <br/>
 

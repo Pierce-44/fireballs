@@ -63,17 +63,20 @@ This application is a fireball simulation built with TypeScript, React, and Next
    ```sh
    git clone git@github.com:Pierce-44/fireballs.git
    ```
-2. Install Frontend Dependencies:
+3. Install Frontend Dependencies:
    - Navigate to the /frontend directory:
+     
      ```sh
      cd frontend
      ```
    - Install dependencies:
+     
      ```sh
      npm install
      ```
    - Start the frontend development server:
+     
      ```sh
      npm run dev
      ```
-   - Access the frontend at http://localhost:3000 *please note no datat will be visible until the backend is running*
+   - Access the frontend at http://localhost:3000 *please note no data will be visible until the backend is running*

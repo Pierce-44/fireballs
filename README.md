@@ -1,5 +1,8 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Pierce-44/instagram-clone/main/public/instagramLoading.png" height="60px"/>
+  <img src="https://github.com/user-attachments/assets/3d4d1ecd-9c69-4026-bfb6-747b019cc06e" height="60px"/>
+
+
+
 </div>
 
 # NASA Fireballs 3D Visual

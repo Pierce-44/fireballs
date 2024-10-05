@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const exampleController = require("../controllers/fireballController");
+const fireballController = require("../controllers/fireballController");
 
-router.get("/", exampleController.getExample);
+router.get("/", fireballController.getFireballs);
 
 module.exports = router;

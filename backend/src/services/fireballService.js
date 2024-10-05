@@ -25,8 +25,15 @@ exports.getCachedData = async () => {
     );
     const data = response.data;
 
+    // only store values with latitude, longitude and velocity values
+    const dataWithValues = data.data.filter(
+      (fireball) => fireball[3] && fireball[5] && fireball[8]
+    );
+
     // Cache data in Redis for 1 week (7 days in seconds)
-    await client.set("externalApiData", JSON.stringify(data), { EX: 604800 });
+    await client.set("externalApiData", JSON.stringify(dataWithValues), {
+      EX: 604800,
+    });
     console.log("Data fetched and cached in Redis");
 
     return data;

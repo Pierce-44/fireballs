@@ -1,6 +1,6 @@
 const fireballService = require("../services/fireballService");
 
-exports.getExample = async (req, res) => {
+exports.getFireballs = async (req, res) => {
   try {
     const data = await fireballService.getCachedData();
     res.status(200).json({

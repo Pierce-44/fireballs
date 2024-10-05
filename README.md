@@ -60,10 +60,11 @@ This application is a fireball simulation built with TypeScript, React, and Next
 
 ## Installation
 1. Clone the repository:
+   
    ```sh
    git clone git@github.com:Pierce-44/fireballs.git
    ```
-3. Install Frontend Dependencies:
+2. Install Frontend Dependencies:
    - Navigate to the /frontend directory:
      
      ```sh
@@ -80,3 +81,26 @@ This application is a fireball simulation built with TypeScript, React, and Next
      npm run dev
      ```
    - Access the frontend at http://localhost:3000 *please note no data will be visible until the backend is running*
+  
+  3. Install Backend Dependencies:
+     - Navigate to the /backend directory:
+       
+       ```sh
+       cd backend
+       ```
+     - Install dependencies:
+    
+       ```sh
+       npm install
+       ```
+     - Ensure Redis is running, then start the backend server:
+
+       ```sh
+       npm start
+       ```
+
+  4. Redis Setup (if not running already)
+     Ensure the Redis server is up and running:
+     ```sh
+     redis-server
+     ```

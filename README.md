@@ -16,7 +16,9 @@ This application is a fireball simulation built with TypeScript, React, and Next
 - Caching Layer: Uses Redis on the backend to cache responses for improved performance and reduced API calls.
 
 <br/>
+
 ### Live App: [https://fireballs3d.vercel.app](https://fireballs3d.vercel.app/)
+
 <br/>
 
 # Demo

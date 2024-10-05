@@ -44,10 +44,10 @@ This application is a fireball simulation built with TypeScript, React, and Next
      ```sh
      brew install redis
     - For Linux: Use the package manager for your distribution. For example, on Ubuntu:
-     ```sh
-     sudo apt update
-     sudo apt install redis-server
-    ```
+      ```sh
+      sudo apt update
+      sudo apt install redis-server
+
 
 
 ## How to Install and Run the Project Locally:

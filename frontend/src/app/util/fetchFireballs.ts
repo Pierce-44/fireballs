@@ -1,5 +1,8 @@
 export default async function fetchFireballs() {
-  const url = process.env.FIREBALLS_API!;
+  const url =
+    process.env.FIREBALLS_API_PRODUCTION ||
+    process.env.FIREBALLS_API_DEVELOPMENT ||
+    "";
 
   const response = await fetch(url);
 

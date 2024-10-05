@@ -50,6 +50,7 @@ This application is a fireball simulation built with TypeScript, React, and Next
       ```
 3. Start Redis Server:
    - IMPORTANT, this needs to be running for the frontend and backend applications to work
+     
      ```sh
      redis-server
      ```

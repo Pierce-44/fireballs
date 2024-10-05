@@ -19,11 +19,7 @@ export default function Home() {
   const fireballsData = useQueryFireballs();
 
   const fireballs = fireballsData.data?.data.filter(
-    (fireball) =>
-      Number(fireball[2]) > energyFilterValue &&
-      fireball[3] &&
-      fireball[5] &&
-      fireball[8],
+    (fireball) => Number(fireball[2]) > energyFilterValue,
   );
 
   const [hideTab, setHideTab] = React.useState(false);

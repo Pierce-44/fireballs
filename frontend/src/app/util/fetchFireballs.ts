@@ -1,6 +1,5 @@
 export default async function fetchFireballs() {
-  // const url = "https://ssd-api.jpl.nasa.gov/fireball.api?limit=50";
-  const url = "https://ssd-api.jpl.nasa.gov/fireball.api?www=1&vel-comp=true";
+  const url = process.env.FIREBALLS_API!;
 
   const response = await fetch(url);
 

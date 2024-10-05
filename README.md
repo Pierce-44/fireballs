@@ -106,3 +106,4 @@ This application is a fireball simulation built with TypeScript, React, and Next
        redis-server
        ```
        
+### You should now be able to see your application running locally at [http://localhost:3000](http://localhost:3000)

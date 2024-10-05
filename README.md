@@ -1,84 +1,119 @@
 <div align="center">
   <img src="https://github.com/user-attachments/assets/9b285f78-0b6e-4e1c-8695-6584574cf833" height="100px"/>
-
-
-
 </div>
 
 # NASA Fireballs 3D Visual
 
-## Overview
+### Overview
 This application is a fireball simulation built with TypeScript, React, and Next.js. It utilizes Tailwind CSS for styling and TanStack Query for efficient asynchronous state management. The backend is powered by Node.js and leverages Redis for caching responses, providing a smooth user experience. The visualizations of the Earth and the impacting fireballs are created using React Three Fiber.
 <br/>
 
-## Features
--Data Source: Utilizes the NASA API to fetch fireball data.
--3D Visualization: Implements React Three Fiber for immersive visualization of Earth and fireball impacts.
--Responsive Design: Tailored using Tailwind CSS for a seamless experience across devices.
--State Management: Employs TanStack Query for robust handling of asynchronous data fetching and caching.
--Caching Layer: Uses Redis on the backend to cache responses for improved performance and reduced API calls.
+### Features
+- Data Source: Utilizes the NASA API to fetch fireball data.
+- 3D Visualization: Implements React Three Fiber for immersive visualization of Earth and fireball impacts.
+- Responsive Design: Tailored using Tailwind CSS for a seamless experience across devices.
+- State Management: Employs TanStack Query for robust handling of asynchronous data fetching and caching.
+- Caching Layer: Uses Redis on the backend to cache responses for improved performance and reduced API calls.
+
 <br/>
 
-## How to Install and Run the Project Locally:
-#### - Please follow the following steps if you would like to install and run the porject locally on http://localhost:3000/:
+### Live App: [https://fireballs3d.vercel.app](https://fireballs3d.vercel.app/)
 
-1. Clone the repository to your local folder of choice
+<br/>
+
+# Demo
+
+https://github.com/user-attachments/assets/8dc95907-f557-4e3f-8118-4e9f3322ddca
+
+<br/>
+
+# Prerequisites
+### - Before running the application, ensure you have the following installed on your computer:
+
+### Node.js
+1. Check if Node.js is installed:
    ```sh
-   git clone git@github.com:Pierce-44/netflix-clone.git
+   node -v
    ```
-   
-<br/>
+   If Node.js is installed, this command will return the version number. If not, proceed to install it.
 
-2. Go to Firebase and follow the instructions for creating a project
-   ```sh
-   https://firebase.google.com/
-   ```
-   
-<br/>   
+2. Install Node.js:
+   - Visit the Node.js official website and download the latest LTS version for your operating system.
+   - Follow the installation [instructions](https://nodejs.org/en) for your platform.
 
-3. Within your Firebase cloud storage create three folders named "posts", "profilePhotos" and "stories" (seen below):
-
-   ![firebaseCloud](https://user-images.githubusercontent.com/96740762/191279127-bace5d47-a316-4636-88bc-9bc25b114bd6.png)
-   
-<br/>
-
-4. Within your Firestore Database create two collections one named "userList" and the other "users" (seen below):
-
-   ![firebaseDB](https://user-images.githubusercontent.com/96740762/191280085-712860a4-b81b-4a63-b684-8b32beada745.png)
-
-<br/>
-
-5. Within your Firebase project allow email and password sign-in method.
-
-<br/>
-
-6. Within `util/firbaseConfig.ts` replace the empty Firebase configuration with your Firebase configuration, which was assigned to your project when you created it and    can be found under your project settings on Firebase. It should resemble the following example:
-    ```js
-    // Your web app's Firebase configuration should resemble the following EXAMPLE:
-    
-    const firebaseConfig = {
-      apiKey: "AIzaSyA97-R5P4bEwjV0efHt3hLs3bc32ns4shs",
-      authDomain: "instagram-clone-ph.firebaseapp.com",
-      projectId: "instagram-clone-ph",
-      storageBucket: "instagram-clone-ph.appspot.com",
-      messagingSenderId: "554003582327",
-      appId: "1:554003582327:web:97667da84152c9ff7aa572"
-    };
+### Redis
+1. Check if Redis is installed:
+    ```sh
+     redis-server --version
     ```
-    
-    <br/>
+    If Redis is installed, this command will return the version number. If not, proceed to install it.
 
-7. Install NPM packages
-   ```sh
-   npm install
-   ```
+2. Install Redis:
+   - For Windows: You can install Redis using wsl2 please see the following [instructions](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/install-redis-on-windows)
+   - For macOS: Use Homebrew:
+     
+     ```sh
+     brew install redis
+    - For Linux: Use the package manager for your distribution. For example, on Ubuntu:
+      
+      ```sh
+      sudo apt update
+      sudo apt install redis-server
+      ```
+3. Start Redis Server:
+   - IMPORTANT, this needs to be running for the frontend and backend applications to work
+     
+     ```sh
+     redis-server
+     ```
+
+
+# Installation
+1. Clone the repository:
    
-    <br/>
-
-8. Start the app on your localhost
-   ```js
-   npm run dev
+   ```sh
+   git clone git@github.com:Pierce-44/fireballs.git
    ```
+2. Install Frontend Dependencies:
+   - Navigate to the /frontend directory:
+     
+     ```sh
+     cd frontend
+     ```
+   - Install dependencies:
+     
+     ```sh
+     npm install
+     ```
+   - Start the frontend development server:
+     
+     ```sh
+     npm run dev
+     ```
+   - Access the frontend at http://localhost:3000 *please note no data will be visible until the backend is running*
+  
+  3. Install Backend Dependencies:
+     - Navigate to the /backend directory:
+       
+       ```sh
+       cd backend
+       ```
+     - Install dependencies:
+    
+       ```sh
+       npm install
+       ```
+     - Ensure Redis is running, then start the backend server:
 
+       ```sh
+       npm start
+       ```
 
-
+  4. Redis Setup (if not running already)
+     - Ensure the Redis server is up and running:
+    
+       ```sh
+       redis-server
+       ```
+       
+### You should now be able to see your application running locally at [http://localhost:3000](http://localhost:3000)

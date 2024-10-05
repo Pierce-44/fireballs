@@ -37,6 +37,18 @@ export default function Home() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const controlsRef = React.useRef<any>();
 
+  if (fireballsData.isError) {
+    return (
+      <div className="flex h-full w-full flex-col items-center justify-center text-white">
+        <p> {fireballsData.error.message}</p>{" "}
+        <p>
+          Please make sure that you have setup and have running the fireballs
+          node.js server
+        </p>
+      </div>
+    );
+  }
+
   if (fireballsData.isLoading || !fireballsData.data) {
     return <LoadingSpinner />;
   }

@@ -17,17 +17,27 @@ This application is a fireball simulation built with TypeScript, React, and Next
 
 <br/>
 
-## How to Install and Run the Project Locally:
-#### - Please follow the following steps if you would like to install and run the porject locally on http://localhost:3000/:
+## Prerequisites
+### - Before running the application, ensure you have the following installed on your computer:
 
-1. Clone the repository to your local folder of choice
+### Node.js
+1. Check if Node.js is installed:
    ```sh
-   git clone git@github.com:Pierce-44/netflix-clone.git
+   node -v
+   ```
+   If Node.js is installed, this command will return the version number. If not, proceed to install it.
+   
+## How to Install and Run the Project Locally:
+#### - Please follow the following steps if you would like to install and run the porject locally
+
+1. Clone this repository to your local folder of choice
+   ```sh
+   git clone git@github.com:Pierce-44/fireballs.git
    ```
    
 <br/>
 
-2. Go to Firebase and follow the instructions for creating a project
+2. Ensure that you have node running on your machine, type node into you command terminal to check.
    ```sh
    https://firebase.google.com/
    ```

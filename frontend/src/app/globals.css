@@ -59,3 +59,24 @@ body {
     opacity: 1;
   }
 }
+
+/* Scrollbar Track */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+/* Scrollbar Handle */
+::-webkit-scrollbar-thumb {
+  background-color: #333; /* Dark scrollbar handle */
+  border-radius: 10px; /* Rounded edges */
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar-track {
+  background-color: #111; /* Darker background for the scrollbar track */
+}
+
+/* Scrollbar thumb and track color */
+* {
+  scrollbar-color: #333 #111; /* thumb color, track color */
+}

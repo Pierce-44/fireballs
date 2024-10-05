@@ -65,7 +65,7 @@ export default function SideTab({
 
   return (
     <div
-      className={`${hideTab ? "w-[47px] px-1" : "w-full px-5 sm:w-[350px]"} h-full shrink-0 space-y-4 overflow-scroll bg-[#212121] py-2 transition-all duration-300 sm:max-w-[350px]`}
+      className={`${hideTab ? "w-[47px] px-1" : "w-full overflow-y-scroll px-5 sm:w-[350px]"} h-full shrink-0 space-y-4 bg-[#212121] py-2 transition-all duration-300 sm:max-w-[350px]`}
     >
       <div className="flex w-full items-center">
         <button

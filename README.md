@@ -31,9 +31,28 @@ This application is a fireball simulation built with TypeScript, React, and Next
    - Visit the Node.js official website and download the latest LTS version for your operating system.
    - Follow the installation instructions for your platform.
      ```sh
-   [node -v](https://nodejs.org/en)
-   ```
-   
+     https://nodejs.org/en
+     ```
+### Redis
+1. Check if Node.js is installed:
+    ```sh
+     redis-server --version
+    ```
+    If Redis is installed, this command will return the version number. If not, proceed to install it.
+
+2. Install Redis:
+   - For Windows: You can install Redis using wsl2 please see the following [instructions](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/install-redis-on-windows)
+   - For macOS: Use Homebrew:
+     ```sh
+     brew install redis
+    ```
+  - For Linux: Use the package manager for your distribution. For example, on Ubuntu:
+     ```sh
+     sudo apt update
+     sudo apt install redis-server
+    ```
+
+
 ## How to Install and Run the Project Locally:
 #### - Please follow the following steps if you would like to install and run the porject locally
 

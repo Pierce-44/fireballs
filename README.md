@@ -44,10 +44,8 @@ This application is a fireball simulation built with TypeScript, React, and Next
    - For Windows: You can install Redis using wsl2 please see the following [instructions](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/install-redis-on-windows)
    - For macOS: Use Homebrew:
      ```sh
-     brew install redis
-    ```
-    
-  - For Linux: Use the package manager for your distribution. For example, on Ubuntu:
+     brew install redis ```
+    - For Linux: Use the package manager for your distribution. For example, on Ubuntu:
      ```sh
      sudo apt update
      sudo apt install redis-server

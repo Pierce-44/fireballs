@@ -29,10 +29,8 @@ This application is a fireball simulation built with TypeScript, React, and Next
 
 2. Install Node.js:
    - Visit the Node.js official website and download the latest LTS version for your operating system.
-   - Follow the installation instructions for your platform.
-     ```sh
-     https://nodejs.org/en
-     ```
+   - Follow the installation [instructions](https://nodejs.org/en) for your platform.
+
 ### Redis
 1. Check if Node.js is installed:
     ```sh
